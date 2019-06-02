@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from .models import students
 
-# Create your views here.
 def home(request):
-    return render(request,"home.html")
+    std = students.objects.all()
+    return render(request, "home.html",{"std":std})
+
+
 
 
 def index(request):
