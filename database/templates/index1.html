@@ -1,0 +1,49 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{%static "mycss/modcss"%}">
+</head>
+<body>
+<div align="center" class="w3-panel w3-border-left w3-pale-red w3-border-red" >
+    <h1>Info table</h1>
+</div>
+<table class="container" >
+    {%if telu%}
+    <div>
+    <thead class="w3-panel w3-border w3-hover-border-red">
+
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Photo</th>
+    </thead></div>
+        {% for j in telu%}
+        <tr>
+        <td>{{j.Name}}</td>
+        <td>{{j.Price}}</td>
+        <td>{{j.Desc}}</td>
+        <td>
+            <div class="w3-container">
+  <div class="w3-card-4" style="width:50%">
+    <img src="{{j.Img.url}}" alt="Alps" style="width:50%">
+    <div class="w3-container w3-center">
+
+    </div>
+  </div>
+</div>
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+{%else%}
+    <p>No Record Found!!</p>
+{%endif%}
+
+
+</body>
+</html>

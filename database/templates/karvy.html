@@ -1,0 +1,93 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'homepage/assets/css/main.css' %}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{%static "mycss/modcss"%}">
+<link rel="stylesheet" href="{% static 'mycss/modcss.css' %}" />
+</head>
+
+
+
+<body>
+<div id="ex">
+    <h1 align="center">Karvy Bsnlcdr Pune</h1>
+</div>
+<div>
+{%if emp%}
+    <table >
+        <thead>
+        <th>Name</th>
+        <th>Emp_No</th>
+        <th>Email_ID</th>
+        <th>Mobile_No</th>
+        <th>Designation</th>
+        <th>DOJ</th>
+        <th>DOB</th>
+
+        <th>Photo</th>
+        </thead>
+
+
+        {% for s in emp%}
+
+        <tr style="color:black">
+            <td>{{s.Name}}</td>
+            <td>{{s.Emp_No}}</td>
+            <td>{{s.Email_ID}}</td>
+            <td>{{s.Mobile_No}}</td>
+            <td>{{s.Designation}}</td>
+            <td>{{s.DOJ}}</td>
+            <td>{{s.DOB}}</td>
+
+            <td>
+                <div class="w3-card-4" style="width:50%">
+                    <img src="{{s.Photo.url}}" width="60" height="60" alt="">
+                </div>
+            </td>
+        </tr>
+
+        {%endfor%}
+    </table>
+{%else%}
+    <p>No Records Found!!</p>
+{%endif%}
+</div>
+<hr>
+<div class="cities">
+
+    <img src='https://www.karvyinnotech.com/images/karvy-logo.png'>
+<thead>
+<div class=""><p>
+    <th><a href="https://www.karvyinnotech.com/" class="btn btn-success" style="margin-left:5px" role="button">www.karvyinnotech.com</a></th>
+    <th><a href="https://www.w3schools.com/w3css/tryw3css_templates_coming_soon.htm" class="btn btn-warning" style="margin-left:370px;role="button" >My New Website</a></th>
+</div></p>
+</thead>
+    <!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://twitter.com/login?lang=en" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.facebook.com/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/accounts/login/?hl=en" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Sham Tupe. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'homepage/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/util.js' %}"></script>
+			<script src="{% static 'homepage/assets/js/main.js' %}"></script>
+
+</body>
+</html>
